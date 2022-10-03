@@ -1,0 +1,424 @@
+I"Ȅ<p>OOP stands for Object-Oriented Programming. Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.</p>
+
+<h1 id="content"><a href="#object-oriented-programming-1">Content</a></h1>
+
+<h2 id="object-oriented-programming">Object Oriented Programming</h2>
+
+<h3 id="1-inheritance"><a href="#inheritance-1">1. Inheritance</a></h3>
+<ol>
+  <li>Inheritance</li>
+  <li>Aggregation</li>
+</ol>
+
+<h3 id="2-polymorphism"><a href="#polymorphism-1">2. Polymorphism</a></h3>
+<ol>
+  <li>Member Overloading</li>
+  <li>Method Overriding</li>
+  <li>Base</li>
+  <li>Polymorphism</li>
+  <li>Sealed</li>
+</ol>
+
+<h3 id="3-abstraction"><a href="#abstraction">3. Abstraction</a></h3>
+<ol>
+  <li>Abstract</li>
+  <li>Interface</li>
+</ol>
+
+<h3 id="4-namespace"><a href="#namespace">4. Namespace</a></h3>
+<ol>
+  <li>Namespaces</li>
+  <li>Access Modifiers</li>
+  <li>Encapsulation</li>
+</ol>
+
+<hr />
+
+<h1 id="object-oriented-programming-1">Object Oriented Programming</h1>
+
+<h2 id="inheritance">Inheritance</h2>
+
+<p>In C#, <code class="language-plaintext highlighter-rouge">inheritance</code> is a process in which one object acquires all the properties and behaviors of its parent object automatically. In such way, you can reuse, extend or modify the attributes and behaviors which is defined in other class.</p>
+
+<p>In C#, the class which inherits the members of another class is called <strong>derived class</strong> and the class whose members are inherited is called base class. The derived class is the specialized class for the base class.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Advantage</code> of C# Inheritance</p>
+
+<p><strong>Code reusability</strong>: Now you can reuse the members of your <code class="language-plaintext highlighter-rouge">parent class</code>. So, there is no need to define the member <code class="language-plaintext highlighter-rouge">again</code>. So <code class="language-plaintext highlighter-rouge">less code</code> is required in the class.</p>
+
+<h3 id="inheritance-1">Inheritance</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Employee</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">float</span> <span class="n">salary</span> <span class="p">=</span> <span class="m">40000</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">paid</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">salary</span> <span class="p">+</span> <span class="s">" has been paid"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Programmer</span> <span class="p">:</span> <span class="n">Employee</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">float</span> <span class="n">bonus</span> <span class="p">=</span> <span class="m">10000</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">TestInheritance</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Programmer</span> <span class="n">p1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Programmer</span><span class="p">();</span>
+
+        <span class="n">p1</span><span class="p">.</span><span class="nf">paid</span><span class="p">();</span>
+
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Salary: "</span> <span class="p">+</span> <span class="n">p1</span><span class="p">.</span><span class="n">salary</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Bonus: "</span> <span class="p">+</span> <span class="n">p1</span><span class="p">.</span><span class="n">bonus</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="aggregation">Aggregation</h3>
+
+<p><code class="language-plaintext highlighter-rouge">aggregation</code> is a process in which one class <code class="language-plaintext highlighter-rouge">defines</code> <strong>another class</strong> as any <code class="language-plaintext highlighter-rouge">entity reference</code>. It is another way to <strong>reuse</strong> the class. It is a form of association that represents HAS-A relationship.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">address</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">city</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nf">address</span><span class="p">(</span><span class="kt">string</span> <span class="n">city</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">city</span> <span class="p">=</span> <span class="n">city</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">employee</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">address</span> <span class="n">address</span><span class="p">;</span>     <span class="c1">//address is called</span>
+    <span class="k">public</span> <span class="nf">employee</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">address</span> <span class="n">address</span><span class="p">)</span> <span class="c1">//addressing</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">address</span> <span class="p">=</span> <span class="n">address</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">display</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">id</span> <span class="p">+</span> <span class="s">"\n"</span> <span class="p">+</span> <span class="n">address</span><span class="p">.</span><span class="n">city</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">testAggression</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">address</span> <span class="n">a</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">address</span><span class="p">(</span><span class="s">"chenobyl"</span><span class="p">);</span>        
+        <span class="n">employee</span> <span class="n">e</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">employee</span><span class="p">(</span><span class="m">25094</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span> <span class="c1">//addressing and creating new</span>
+        <span class="n">e</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="polymorphism">Polymorphism</h2>
+<h3 id="member-overloading">Member Overloading</h3>
+
+<p>If we create two or more members having same name but different in number or type of parameter, it is known as member overloading. In C#, we can overload:</p>
+
+<ul>
+  <li>methods,</li>
+  <li>constructors</li>
+  <li>indexed properties</li>
+</ul>
+
+<p>It is because these members have parameters only.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Cal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">float</span> <span class="k">add</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TestMemberOverloading</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">Cal</span><span class="p">.</span><span class="k">add</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">23</span><span class="p">));</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">Cal</span><span class="p">.</span><span class="k">add</span><span class="p">(</span><span class="m">12.4f</span><span class="p">,</span> <span class="m">21.3f</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="method-overriding">Method Overriding</h3>
+
+<p>If <code class="language-plaintext highlighter-rouge">derived class</code> defines <code class="language-plaintext highlighter-rouge">same method</code> as defined in its <code class="language-plaintext highlighter-rouge">base class</code>, it is known as <strong>method overriding</strong> in C#. It is used to achieve runtime polymorphism. It enables you to provide specific implementation of the method which is already provided by its <code class="language-plaintext highlighter-rouge">base class</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">eat</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Eating..."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Dog</span> <span class="p">:</span> <span class="n">Animal</span>
+<span class="p">{</span>
+    <span class="c1">//overload eat()</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">eat</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Eating bread..."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TestOverriding</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Dog</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Dog</span><span class="p">();</span>
+        <span class="n">d</span><span class="p">.</span><span class="nf">eat</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="base">Base</h3>
+
+<p><code class="language-plaintext highlighter-rouge">base</code> keyword is used to access fields, <strong>constructors</strong> and <strong>methods</strong> of base class.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">eat</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"animal"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">dog</span> <span class="p">:</span> <span class="n">animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">eat</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">base</span><span class="p">.</span><span class="nf">eat</span><span class="p">();</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"dog"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">program</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">dog</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">dog</span><span class="p">();</span>
+        <span class="n">d</span><span class="p">.</span><span class="nf">eat</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="polymorphism-1">Polymorphism</h3>
+
+<p>The term <code class="language-plaintext highlighter-rouge">Polymorphism</code> is the combination of “poly” + “morphs” which means many forms. It is a greek word. In object-oriented programming, we use 3 main concepts: <code class="language-plaintext highlighter-rouge">inheritance</code>, <code class="language-plaintext highlighter-rouge">encapsulation</code> and <code class="language-plaintext highlighter-rouge">polymorphism</code>.</p>
+
+<p>There are two types of polymorphism in C#: <strong>compile time polymorphism</strong> and <strong>runtime polymorphism</strong>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Compile time polymorphism</code> is achieved by method overloading and operator overloading in C#. It is also known as static binding or early binding.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Runtime polymorphism</code> in achieved by method overriding which is also known as dynamic binding or late binding.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">color</span> <span class="p">=</span> <span class="s">"white"</span><span class="p">;</span>
+
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Dog</span> <span class="p">:</span> <span class="n">Animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">color</span> <span class="p">=</span> <span class="s">"black"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TestSealed</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Animal</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Dog</span><span class="p">();</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">color</span><span class="p">);</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="sealed">Sealed</h3>
+
+<p><code class="language-plaintext highlighter-rouge">sealed</code> keyword <strong>applies restrictions</strong> on the class and method. If you create a sealed class, it cannot be derived. If you create a sealed method, it <strong>cannot be overridden</strong>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">public</span> <span class="k">class</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">eat</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"eating..."</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Dog</span> <span class="p">:</span> <span class="n">Animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">bark</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"barking..."</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TestSealed</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Dog</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Dog</span><span class="p">();</span>
+        <span class="n">d</span><span class="p">.</span><span class="nf">eat</span><span class="p">();</span>
+        <span class="n">d</span><span class="p">.</span><span class="nf">bark</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="abstraction">Abstraction</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Abstract classes</code> are the way to achieve abstraction in C#. Abstraction in C# is the process to hide the internal details and showing functionality only. Abstraction can be achieved by two ways:</p>
+
+<ol>
+  <li>Abstract class</li>
+  <li>Interface</li>
+</ol>
+
+<p>Abstract class and interface both can have abstract methods which are necessary for abstraction.</p>
+
+<h3 id="abstract">Abstract</h3>
+
+<p>A method which is declared abstract and has no body is called <code class="language-plaintext highlighter-rouge">abstract method</code>. It can be declared inside the <code class="language-plaintext highlighter-rouge">abstract class only</code>. Its implementation must be provided by derived classes. 
+Example</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public abstract void draw();  
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Shape</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">abstract</span> <span class="k">void</span> <span class="nf">draw</span><span class="p">();</span>  
+<span class="p">}</span>  
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">:</span> <span class="n">Shape</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">draw</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"drawing rectangle..."</span><span class="p">);</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">draw</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"drawing circle..."</span><span class="p">);</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TestAbstract</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="n">Shape</span> <span class="n">s</span><span class="p">;</span>  
+        <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="p">();</span>  
+        <span class="n">s</span><span class="p">.</span><span class="nf">draw</span><span class="p">();</span>  
+        <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Circle</span><span class="p">();</span>  
+        <span class="n">s</span><span class="p">.</span><span class="nf">draw</span><span class="p">();</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<h3 id="interface">Interface</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Interface</code> in C# is a <strong>blueprint</strong> of a class. It is like abstract class because all the methods which are declared inside the interface are abstract methods. It <strong>cannot</strong> have <code class="language-plaintext highlighter-rouge">method body</code> and <strong>cannot</strong> be <code class="language-plaintext highlighter-rouge">instantiated</code>.</p>
+
+<p>It is used to <code class="language-plaintext highlighter-rouge">achieve multiple inheritance</code> which <strong>cannot</strong> be <code class="language-plaintext highlighter-rouge">achieved by class</code>. It is used to achieve fully <code class="language-plaintext highlighter-rouge">abstraction</code> because it <strong>cannot</strong> have <code class="language-plaintext highlighter-rouge">method body</code>.</p>
+
+<p>Its implementation must be provided by class or struct. The <code class="language-plaintext highlighter-rouge">class</code> or <code class="language-plaintext highlighter-rouge">struct</code> which implements the <code class="language-plaintext highlighter-rouge">interface</code>, must provide the implementation of all the methods declared inside the interface.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">interface</span> <span class="nc">Drawable</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">Draw</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Rec</span> <span class="p">:</span> <span class="n">Drawable</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Draw</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"draw rec"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Drawable</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Draw</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"draw Circle"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Drawable</span> <span class="n">d</span><span class="p">;</span>
+        <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Rec</span><span class="p">();</span>
+        <span class="n">d</span><span class="p">.</span><span class="nf">Draw</span><span class="p">();</span>
+        <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Circle</span><span class="p">();</span>
+        <span class="n">d</span><span class="p">.</span><span class="nf">Draw</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="namespace">Namespace</h2>
+
+<h3 id="namespaces">Namespaces</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Namespaces</code> in C# are used to organize <code class="language-plaintext highlighter-rouge">too many classes</code> so that it can be <code class="language-plaintext highlighter-rouge">easy</code> to <strong>handle the application</strong>.</p>
+
+<p>To use that specific namespace define it using</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">namespace</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="access-modifiers">Access Modifiers</h3>
+
+<p>Access modifiers or specifiers are the keywords that are used to specify accessibility or scope of variables and functions in the C# application.</p>
+
+<p>C# provides five types of access specifiers.</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Public</code>: It specifies that access is not restricted.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Protected</code>: It specifies that access is limited to the containing class or in derived class.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Internal</code>: It specifies that access is limited to the current assembly.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Protected internal</code>: It specifies that access is limited to the current assembly or types derived from the containing class.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Private</code>: It specifies that access is limited to the containing type.</p>
+  </li>
+</ol>
+
+<p>We can choose any of these to protect our data. <code class="language-plaintext highlighter-rouge">Public</code> is <strong>not restricted</strong> and <code class="language-plaintext highlighter-rouge">Private</code> is <strong>most restricted</strong>. The following table describes about the accessibility of each.</p>
+
+<h3 id="encapsulation">Encapsulation</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Encapsulation</code> is the concept of <strong>wrapping data</strong> into a <code class="language-plaintext highlighter-rouge">single unit</code>. It collects <code class="language-plaintext highlighter-rouge">data members</code> and <code class="language-plaintext highlighter-rouge">member functions</code> into a <code class="language-plaintext highlighter-rouge">single unit</code> called <strong>class</strong>. The <code class="language-plaintext highlighter-rouge">purpose</code> of encapsulation is to prevent alteration of data from outside. This data can only be accessed by getter functions of the class.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
+    <span class="c1">//member variables</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">length</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">width</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">length</span> <span class="p">*</span> <span class="n">width</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Display</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Length: {0}"</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Width: {0}"</span><span class="p">,</span> <span class="n">width</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Area: {0}"</span><span class="p">,</span> <span class="nf">GetArea</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="c1">//end class Rectangle</span>
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ExecuteRectangle</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Rectangle</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="p">();</span>
+        <span class="n">r</span><span class="p">.</span><span class="n">length</span> <span class="p">=</span> <span class="m">4.5</span><span class="p">;</span>
+        <span class="n">r</span><span class="p">.</span><span class="n">width</span> <span class="p">=</span> <span class="m">3.5</span><span class="p">;</span>
+        <span class="n">r</span><span class="p">.</span><span class="nf">Display</span><span class="p">();</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<hr />
+:ET

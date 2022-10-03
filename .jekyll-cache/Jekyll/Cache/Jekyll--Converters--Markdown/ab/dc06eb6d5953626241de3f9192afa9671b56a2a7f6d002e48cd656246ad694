@@ -1,0 +1,630 @@
+I"[¥<p>Design Pattern provides a template or descriptional approach on how to solve a problem arising in multiple situations. Design Patterns however are general solution providers or they can be termed as flexible solution makers for commonly arising design pattern problems</p>
+
+<h1 id="design-patterns">Design Patterns</h1>
+
+<h2 id="content">Content</h2>
+
+<ol>
+  <li>
+    <p><a href="#design-pattern">Design Patterns</a></p>
+  </li>
+  <li>
+    <p><a href="#patterns-intro">Patterns Intro</a></p>
+  </li>
+</ol>
+
+<h3 id="1-creational-patterns"><a href="#1-creational-patterns-1">1. Creational Patterns</a></h3>
+
+<ol>
+  <li>
+    <p>Abstract Factory</p>
+  </li>
+  <li>
+    <p>Builder</p>
+  </li>
+  <li>
+    <p>Factory Method</p>
+  </li>
+  <li>
+    <p>Prototype</p>
+  </li>
+  <li>
+    <p>Singleton</p>
+  </li>
+</ol>
+
+<h3 id="2-structural-patterns"><a href="#2-structural-patterns-1">2. Structural Patterns</a></h3>
+
+<ol>
+  <li>
+    <p>Adapter</p>
+  </li>
+  <li>
+    <p>Bridge</p>
+  </li>
+  <li>
+    <p>Composite</p>
+  </li>
+  <li>
+    <p>Decorator</p>
+  </li>
+  <li>
+    <p>Facade</p>
+  </li>
+  <li>
+    <p>Flyweight</p>
+  </li>
+  <li>
+    <p>Proxy</p>
+  </li>
+</ol>
+
+<h3 id="3-behavioral-patterns"><a href="#3-behavioral-patterns-1">3. Behavioral Patterns</a></h3>
+
+<ol>
+  <li>
+    <p>Chain of Resp.</p>
+  </li>
+  <li>
+    <p>Command</p>
+  </li>
+  <li>
+    <p>Interpreter</p>
+  </li>
+  <li>
+    <p>Iterator</p>
+  </li>
+  <li>
+    <p>Mediator</p>
+  </li>
+  <li>
+    <p>Memento</p>
+  </li>
+  <li>
+    <p>Observer</p>
+  </li>
+  <li>
+    <p>State</p>
+  </li>
+  <li>
+    <p>Strategy</p>
+  </li>
+  <li>
+    <p>Template Method</p>
+  </li>
+  <li>
+    <p>Visitor</p>
+  </li>
+</ol>
+
+<h3 id="example"><a href="#example-1">Example</a></h3>
+
+<h3 id="references"><a href="#references-1">References</a></h3>
+
+<h2 id="design-pattern">Design Pattern</h2>
+
+<p>Design Pattern provides a <code class="language-plaintext highlighter-rouge">template</code> or <code class="language-plaintext highlighter-rouge">descriptional approach</code> on how to solve a problem arising in <strong>multiple situations</strong></p>
+
+<p>Design Patterns however are general solution providers or they can be termed as <strong>flexible solution makers</strong> for commonly arising design pattern problems</p>
+
+<p>To be specific about patterns, the choice of opting for a certain pattern in C# is not confined to solving only a <em>single problem</em>. Patterns are so efficient that they can solve millions of problems with just a <em>few lines of code</em>.</p>
+
+<p>There are although plenty of design patterns in C# approximately <code class="language-plaintext highlighter-rouge">23</code> which are also known as <strong>Gang of Four</strong>.</p>
+
+<h3 id="patterns-intro">Patterns Intro</h3>
+
+<p>To give you a head start, the C# source code for each pattern is provided in 2 forms: structural and real-world. Structural code uses type names as defined in the pattern definition and UML diagrams. Real-world code provides real-world programming situations where you may use these patterns.</p>
+
+<p>A third form, .NET optimized, demonstrates design patterns that fully exploit built-in .NET features, such as, generics, delegates, reflection, and more. These and much more are available in our Dofactory .NET product. See the Singleton page for a .NET Optimized example.</p>
+
+<h2 id="1-creational-patterns-1">1. Creational Patterns</h2>
+
+<p><strong>Creational Design Patterns</strong> offer an effective and dynamically powered mechanism that channels the <code class="language-plaintext highlighter-rouge">proximity of code reusability</code> and enhances <code class="language-plaintext highlighter-rouge">flexibility</code> so that problems can be solved in a <code class="language-plaintext highlighter-rouge">wider arena</code>. The wider the arena the more visible it is to find it and solve it. Creational Design Patterns involve various sub-categories that have been interestingly discussed below.</p>
+
+<h5 id="1-abstract-factory">1. Abstract Factory</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp3.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Creates an instance of several families of classes
+</code></pre></div></div>
+
+<p>Abstract factory pattern let us produce families of multiple related objects <code class="language-plaintext highlighter-rouge">without specifying which classes they belong</code> to.</p>
+
+<p>They remain totally under the hood.</p>
+
+<h5 id="2-builder">2. Builder</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp4.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Separates object construction from its representation
+</code></pre></div></div>
+
+<p>Builder pattern will let us produce families of multiple related objects <code class="language-plaintext highlighter-rouge">without specifying which classes they belong</code> to.</p>
+
+<p>They remain totally under the hood.</p>
+
+<h5 id="3-factory-method">3. Factory Method</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp2.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Creates an instance of several derived classes
+</code></pre></div></div>
+
+<p><strong>Factory Method</strong> is mainly used to provide creational objects in the <code class="language-plaintext highlighter-rouge">sub-class</code> and these sub-classes <code class="language-plaintext highlighter-rouge">are allowed to alter the type of the objects</code> that would be created.</p>
+
+<h5 id="4-prototype">4. Prototype</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp5.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A fully initialized instance to be copied or cloned
+</code></pre></div></div>
+
+<p>Prototype design pattern will let us <code class="language-plaintext highlighter-rouge">copy</code> the existing objects while implementing them without having to be dependent completely on the classes defined.</p>
+
+<h5 id="5-singleton">5. Singleton</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp   .png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A class of which only a single instance can exist
+</code></pre></div></div>
+
+<p>As the name suggests, this pattern ensures that a class should have only one instance with the condition of providing a global access point to the instance.</p>
+
+<h2 id="2-structural-patterns-1">2. Structural Patterns</h2>
+
+<p>Structural Design Patterns offer the flexibility of constructing objects and classes in a large structure so that they can be deal with <code class="language-plaintext highlighter-rouge">larger problems</code> arising at a <code class="language-plaintext highlighter-rouge">certain instance</code>. This design pattern ensures that all the objects and classes are <code class="language-plaintext highlighter-rouge">assembled</code> to form a <code class="language-plaintext highlighter-rouge">large structure</code> <strong>without hampering</strong> the <code class="language-plaintext highlighter-rouge">efficiency</code> and keeping the <code class="language-plaintext highlighter-rouge">flexibility</code> on point. It consists of various sub-categories as shown below.</p>
+
+<h5 id="1-adapter">1. Adapter</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp7.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Match interfaces of different classes
+</code></pre></div></div>
+
+<p>This allows <code class="language-plaintext highlighter-rouge">collaboration with all the interfaces</code> that are found incompatible with the solution-based approach.</p>
+
+<h5 id="2-bridge">2. Bridge</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp8.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Separates an objectâ€™s interface from its implementation
+</code></pre></div></div>
+
+<p>It allows to <code class="language-plaintext highlighter-rouge">split a large class</code> or <code class="language-plaintext highlighter-rouge">set into several small fragments</code> or closely related classes based on the <code class="language-plaintext highlighter-rouge">hierarchies</code>. It can be called an <code class="language-plaintext highlighter-rouge">abstractional implementation</code> where these small classes are rationally and independently dealt with.</p>
+
+<h5 id="3-composite">3. Composite</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp9.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A tree structure of simple and composite objects
+</code></pre></div></div>
+
+<h5 id="4-decorator">4. Decorator</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp10.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Add responsibilities to objects dynamically
+</code></pre></div></div>
+
+<p>The decorator enables to attach various <code class="language-plaintext highlighter-rouge">new behaviors</code> to the objects. It does so by covering up these objects in <code class="language-plaintext highlighter-rouge">special wrapper objects</code> followed by the behavior contained in them.</p>
+
+<h5 id="5-facade">5. Facade</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp11.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A single class that represents an entire subsystem
+</code></pre></div></div>
+
+<p>The facade offers a <code class="language-plaintext highlighter-rouge">simple interface</code> and <code class="language-plaintext highlighter-rouge">exposure to the library</code> or a framework by managing to portray the effective solutions with the <code class="language-plaintext highlighter-rouge">enhancement</code> in the interface no matter what framework we are using.</p>
+
+<h5 id="6-flyweight">6. Flyweight</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp12.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A fine-grained instance used for efficient sharing
+</code></pre></div></div>
+
+<p>Flyweight allows us to <code class="language-plaintext highlighter-rouge">fit more objects</code> into the <code class="language-plaintext highlighter-rouge">RAM</code>. This is done by sharing a common part of the state that is found between <code class="language-plaintext highlighter-rouge">multiple objects</code> <em>rather than having</em> to have to store all the <code class="language-plaintext highlighter-rouge">data for each object</code>.</p>
+
+<h5 id="7-proxy">7. Proxy</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp13.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>An object representing another object
+</code></pre></div></div>
+
+<p>It provides a different way or a substitute for another object. It offers a placeholder for the proxy that controls the access of the original objects. The requests are therefore processed either before or after the original object gets allowed.</p>
+
+<h2 id="3-behavioral-patterns-1">3. Behavioral Patterns</h2>
+
+<p>Behavioral Design Patterns are strictly confined to <code class="language-plaintext highlighter-rouge">strategic</code> or <code class="language-plaintext highlighter-rouge">algorithmic approaches</code>. This pattern is mainly concerned with the approach of <code class="language-plaintext highlighter-rouge">sharing</code> or <code class="language-plaintext highlighter-rouge">putting responsibilities</code> between <code class="language-plaintext highlighter-rouge">different objects</code>.</p>
+
+<h5 id="1-chain-of-resp">1. Chain of Resp.</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp14.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A way of passing a request between a chain of objects
+</code></pre></div></div>
+
+<p>It passes the requests to the chain of handlers. When the request is received by these <code class="language-plaintext highlighter-rouge">handlers</code> in any event, these handlers decide whether they <code class="language-plaintext highlighter-rouge">should be passed to the request to another handler</code> in the chain or process the currently received request.</p>
+
+<h5 id="2-command">2. Command</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp15.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Encapsulate a command request as an object
+</code></pre></div></div>
+
+<p>It turns the <code class="language-plaintext highlighter-rouge">requests</code> into <code class="language-plaintext highlighter-rouge">standalone objects</code> and these objects contain all the data of the request being taken into consideration. Later this request is passed as a method argument for processing and supporting operations which are <code class="language-plaintext highlighter-rouge">undoable or queued</code>.</p>
+
+<h5 id="3-interpreter">3. <code class="language-plaintext highlighter-rouge">Interpreter</code></h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Encapsulate a command request as an object
+</code></pre></div></div>
+
+<h5 id="4-iterator">4. Iterator</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp16.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Encapsulate a command request as an object
+</code></pre></div></div>
+
+<p>This will let you iterate over the collection or <code class="language-plaintext highlighter-rouge">list of problematic patterns</code> without having to expose the underlying representation.</p>
+
+<h5 id="5-mediator">5. Mediator</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp17.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Encapsulate a command request as an object
+</code></pre></div></div>
+
+<p>It simply reduces the dependencies causing chaos by stopping direct communication between the objects and in turn forces them to collaborate via a mediator object.</p>
+
+<h5 id="6-memento">6. Memento</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp18.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Capture and restore an object's internal state
+</code></pre></div></div>
+
+<p>It simply <code class="language-plaintext highlighter-rouge">hides</code> the <code class="language-plaintext highlighter-rouge">implementation details</code> of the object and maintains the actions like saving and restoring the previous state.</p>
+
+<h5 id="7-observer">7. Observer</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp19.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A way of notifying change to a number of classes
+</code></pre></div></div>
+
+<p>It helps to <code class="language-plaintext highlighter-rouge">define a mechanism</code> for a <code class="language-plaintext highlighter-rouge">subscription</code> that eventually notifies the objects about any events that may occur when they are out on the observation.</p>
+
+<h5 id="8-state">8. State</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp20.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alter an object's behavior when its state changes
+</code></pre></div></div>
+
+<p>It allows to <code class="language-plaintext highlighter-rouge">change the whole state</code> of the object there exist some <code class="language-plaintext highlighter-rouge">internal changes</code> in the state. It might appear like an object that has changed its class.</p>
+
+<h5 id="9-strategy">9. Strategy</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp21.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Encapsulates an algorithm inside a class
+</code></pre></div></div>
+
+<p>It allows us to <code class="language-plaintext highlighter-rouge">interchange the objects</code> by putting them into <code class="language-plaintext highlighter-rouge">different classes</code> through a native family of algorithms.</p>
+
+<h5 id="10-template-method">10. Template Method</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp22.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Defer the exact steps of an algorithm to a subclass
+</code></pre></div></div>
+
+<p>It enables <code class="language-plaintext highlighter-rouge">overriding</code> of the <code class="language-plaintext highlighter-rouge">subclass</code> over some predefined phases of an algorithm without having to alter the <code class="language-plaintext highlighter-rouge">superclass</code> defying the skeleton of the proposed algorithm.</p>
+
+<h5 id="11-visitor">11. Visitor</h5>
+
+<p><img src="https://static.javatpoint.com/csharp/images/design-patterns-c-sharp23.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Defines a new operation to a class without change
+</code></pre></div></div>
+
+<p>It simply separates the objects which operate on the algorithm assigned to it.</p>
+
+<h2 id="example-1">Example</h2>
+
+<h3 id="structural-code-in-c"><code class="language-plaintext highlighter-rouge">Structural code</code> in C#</h3>
+
+<p>This structural code demonstrates the Abstract Factory pattern creating parallel hierarchies of objects.</p>
+
+<p>Object creation has been abstracted and there is no need for hard-coded class names in the client code.</p>
+
+<h5 id="mainapp-startup-class-for-structural">MainApp startup class for Structural</h5>
+<h5 id="abstract-factory-design-pattern">Abstract Factory Design Pattern</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MainApp</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Entry point into console application.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Abstract factory #1</span>
+
+        <span class="n">AbstractFactory</span> <span class="n">factory1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ConcreteFactory1</span><span class="p">();</span>
+        <span class="n">Client</span> <span class="n">client1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Client</span><span class="p">(</span><span class="n">factory1</span><span class="p">);</span>
+        <span class="n">client1</span><span class="p">.</span><span class="nf">Run</span><span class="p">();</span>
+
+        <span class="c1">// Abstract factory #2</span>
+
+        <span class="n">AbstractFactory</span> <span class="n">factory2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ConcreteFactory2</span><span class="p">();</span>
+        <span class="n">Client</span> <span class="n">client2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Client</span><span class="p">(</span><span class="n">factory2</span><span class="p">);</span>
+        <span class="n">client2</span><span class="p">.</span><span class="nf">Run</span><span class="p">();</span>
+
+        <span class="c1">// Wait for user input</span>
+
+        <span class="n">Console</span><span class="p">.</span><span class="nf">ReadKey</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-abstractfactory-abstract-class">The <code class="language-plaintext highlighter-rouge">AbstractFactory</code> abstract class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">AbstractFactory</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">abstract</span> <span class="n">AbstractProductA</span> <span class="nf">CreateProductA</span><span class="p">();</span>
+    <span class="k">public</span> <span class="k">abstract</span> <span class="n">AbstractProductB</span> <span class="nf">CreateProductB</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-concretefactory1-class">The <code class="language-plaintext highlighter-rouge">ConcreteFactory1</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ConcreteFactory1</span> <span class="p">:</span> <span class="n">AbstractFactory</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">AbstractProductA</span> <span class="nf">CreateProductA</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ProductA1</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">AbstractProductB</span> <span class="nf">CreateProductB</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ProductB1</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-concretefactory2-class">The <code class="language-plaintext highlighter-rouge">ConcreteFactory2</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ConcreteFactory2</span> <span class="p">:</span> <span class="n">AbstractFactory</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">AbstractProductA</span> <span class="nf">CreateProductA</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ProductA2</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">AbstractProductB</span> <span class="nf">CreateProductB</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ProductB2</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-abstractproducta-abstract-class">The <code class="language-plaintext highlighter-rouge">AbstractProductA</code> abstract class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">AbstractProductA</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-abstractproductb-abstract-class">The <code class="language-plaintext highlighter-rouge">AbstractProductB</code> abstract class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">AbstractProductB</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">abstract</span> <span class="k">void</span> <span class="nf">Interact</span><span class="p">(</span><span class="n">AbstractProductA</span> <span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-producta1-class">The <code class="language-plaintext highlighter-rouge">ProductA1</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ProductA1</span> <span class="p">:</span> <span class="n">AbstractProductA</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-productb1-class">The <code class="language-plaintext highlighter-rouge">ProductB1</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ProductB1</span> <span class="p">:</span> <span class="n">AbstractProductB</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Interact</span><span class="p">(</span><span class="n">AbstractProductA</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="n">Name</span> <span class="p">+</span>
+            <span class="s">" interacts with "</span> <span class="p">+</span> <span class="n">a</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="n">Name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-producta2-class">The <code class="language-plaintext highlighter-rouge">ProductA2</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ProductA2</span> <span class="p">:</span> <span class="n">AbstractProductA</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-productb2-class">The <code class="language-plaintext highlighter-rouge">ProductB2</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ProductB2</span> <span class="p">:</span> <span class="n">AbstractProductB</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Interact</span><span class="p">(</span><span class="n">AbstractProductA</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="n">Name</span> <span class="p">+</span>
+            <span class="s">" interacts with "</span> <span class="p">+</span> <span class="n">a</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="n">Name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-client-class-interaction-environment-for-the-products">The <code class="language-plaintext highlighter-rouge">Client</code> class. Interaction environment for the products.</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Client</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">AbstractProductA</span> <span class="n">_abstractProductA</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">AbstractProductB</span> <span class="n">_abstractProductB</span><span class="p">;</span>
+
+    <span class="c1">// Constructor</span>
+
+    <span class="k">public</span> <span class="nf">Client</span><span class="p">(</span><span class="n">AbstractFactory</span> <span class="n">factory</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_abstractProductB</span> <span class="p">=</span> <span class="n">factory</span><span class="p">.</span><span class="nf">CreateProductB</span><span class="p">();</span>
+        <span class="n">_abstractProductA</span> <span class="p">=</span> <span class="n">factory</span><span class="p">.</span><span class="nf">CreateProductA</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Run</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_abstractProductB</span><span class="p">.</span><span class="nf">Interact</span><span class="p">(</span><span class="n">_abstractProductA</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="real-world-code-in-c"><code class="language-plaintext highlighter-rouge">Real-world</code> code in C#</h3>
+
+<p>This real-world code demonstrates the creation of different animal worlds for a computer game using different factories.</p>
+
+<p>Although the animals created by the Continent factories are different, the interactions among the animals remain the same.</p>
+
+<h5 id="mainapp-startup-class-for-real-world">MainApp startup class for Real-World</h5>
+<h5 id="abstract-factory-design-pattern-1">Abstract Factory Design Pattern</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MainApp</span>
+<span class="p">{</span>
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Entry point into console application.</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Create and run the African animal world</span>
+
+        <span class="n">ContinentFactory</span> <span class="n">africa</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AfricaFactory</span><span class="p">();</span>
+        <span class="n">AnimalWorld</span> <span class="n">world</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AnimalWorld</span><span class="p">(</span><span class="n">africa</span><span class="p">);</span>
+        <span class="n">world</span><span class="p">.</span><span class="nf">RunFoodChain</span><span class="p">();</span>
+
+        <span class="c1">// Create and run the American animal world</span>
+
+        <span class="n">ContinentFactory</span> <span class="n">america</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AmericaFactory</span><span class="p">();</span>
+        <span class="n">world</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AnimalWorld</span><span class="p">(</span><span class="n">america</span><span class="p">);</span>
+        <span class="n">world</span><span class="p">.</span><span class="nf">RunFoodChain</span><span class="p">();</span>
+
+        <span class="c1">// Wait for user input</span>
+
+        <span class="n">Console</span><span class="p">.</span><span class="nf">ReadKey</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-continentfactory-abstract-class">The <code class="language-plaintext highlighter-rouge">ContinentFactory</code> abstract class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">ContinentFactory</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">abstract</span> <span class="n">Herbivore</span> <span class="nf">CreateHerbivore</span><span class="p">();</span>
+    <span class="k">public</span> <span class="k">abstract</span> <span class="n">Carnivore</span> <span class="nf">CreateCarnivore</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-africafactory-abstract-class">The <code class="language-plaintext highlighter-rouge">AfricaFactory</code> abstract class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AfricaFactory</span> <span class="p">:</span> <span class="n">ContinentFactory</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">Herbivore</span> <span class="nf">CreateHerbivore</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Wildebeest</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">Carnivore</span> <span class="nf">CreateCarnivore</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Lion</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-concretefactory2-class-1">The <code class="language-plaintext highlighter-rouge">ConcreteFactory2</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AmericaFactory</span> <span class="p">:</span> <span class="n">ContinentFactory</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">Herbivore</span> <span class="nf">CreateHerbivore</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Bison</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">Carnivore</span> <span class="nf">CreateCarnivore</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Wolf</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-abstractproducta-abstract-class-1">The <code class="language-plaintext highlighter-rouge">AbstractProductA</code> abstract class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Herbivore</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-abstractproductb-abstract-class-1">The <code class="language-plaintext highlighter-rouge">AbstractProductB</code> abstract class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Carnivore</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">abstract</span> <span class="k">void</span> <span class="nf">Eat</span><span class="p">(</span><span class="n">Herbivore</span> <span class="n">h</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-abstractproductb-abstract-class-2">The <code class="language-plaintext highlighter-rouge">AbstractProductB</code> abstract class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// The `ProductA1` class</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+
+<span class="k">class</span> <span class="nc">Wildebeest</span> <span class="p">:</span> <span class="n">Herbivore</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-productb1-class-1">The <code class="language-plaintext highlighter-rouge">ProductB1</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Lion</span> <span class="p">:</span> <span class="n">Carnivore</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Eat</span><span class="p">(</span><span class="n">Herbivore</span> <span class="n">h</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Eat Wildebeest</span>
+
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="n">Name</span> <span class="p">+</span>
+            <span class="s">" eats "</span> <span class="p">+</span> <span class="n">h</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="n">Name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-producta2-class-1">The <code class="language-plaintext highlighter-rouge">ProductA2</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Bison</span> <span class="p">:</span> <span class="n">Herbivore</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-productb2-class-1">The <code class="language-plaintext highlighter-rouge">ProductB2</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Wolf</span> <span class="p">:</span> <span class="n">Carnivore</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Eat</span><span class="p">(</span><span class="n">Herbivore</span> <span class="n">h</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Eat Bison</span>
+
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="n">Name</span> <span class="p">+</span>
+            <span class="s">" eats "</span> <span class="p">+</span> <span class="n">h</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="n">Name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="the-client-class">The <code class="language-plaintext highlighter-rouge">Client</code> class</h5>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AnimalWorld</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">Herbivore</span> <span class="n">_herbivore</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Carnivore</span> <span class="n">_carnivore</span><span class="p">;</span>
+
+    <span class="c1">// Constructor</span>
+
+    <span class="k">public</span> <span class="nf">AnimalWorld</span><span class="p">(</span><span class="n">ContinentFactory</span> <span class="n">factory</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_carnivore</span> <span class="p">=</span> <span class="n">factory</span><span class="p">.</span><span class="nf">CreateCarnivore</span><span class="p">();</span>
+        <span class="n">_herbivore</span> <span class="p">=</span> <span class="n">factory</span><span class="p">.</span><span class="nf">CreateHerbivore</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">RunFoodChain</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_carnivore</span><span class="p">.</span><span class="nf">Eat</span><span class="p">(</span><span class="n">_herbivore</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="references-1">References</h2>
+
+<p><a href="https://www.dofactory.com/net/design-patterns">dofactory</a></p>
+
+<p><a href="https://www.javatpoint.com/design-patterns-c-sharp">javatpoint</a></p>
+:ET

@@ -1,0 +1,811 @@
+I"�<p>C# (see sharp) is a general-purpose, multi-paradigm programming language. C# encompasses static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented programming disciplines.</p>
+
+<h1 id="content"><a href="#basics">Content</a></h1>
+
+<h3 id="basics"><a href="#basics-1">Basics</a></h3>
+<ol>
+  <li>Used for</li>
+  <li>Why Use C#?</li>
+</ol>
+
+<h3 id="control-statement"><a href="#control-statement-1">Control Statement</a></h3>
+<ol>
+  <li>if-else</li>
+  <li>switch</li>
+  <li>while Loop</li>
+  <li>do-While Loop</li>
+  <li>break</li>
+  <li>continue</li>
+  <li>goto</li>
+  <li>comments</li>
+</ol>
+
+<h3 id="function"><a href="#function-1">Function</a></h3>
+<ol>
+  <li>Call By Value</li>
+  <li>Call By Reference</li>
+  <li>Out Parameter</li>
+</ol>
+
+<h3 id="arrays"><a href="#arrays-1">Arrays</a></h3>
+<ol>
+  <li>Arrays</li>
+  <li>Array to Function</li>
+  <li>Multidimensional Array</li>
+  <li>Jagged Arrays</li>
+  <li>Params</li>
+  <li>Array class</li>
+  <li>Command Line Args</li>
+</ol>
+
+<h3 id="object-class"><a href="#object-class-1">Object Class</a></h3>
+<ol>
+  <li>Object and Class</li>
+  <li>Constructor</li>
+  <li>Destructor</li>
+  <li>this static</li>
+  <li>static class</li>
+  <li>static constructor</li>
+  <li>Structs</li>
+  <li>Enum</li>
+</ol>
+
+<h3 id="properties"><a href="#properties-1">Properties</a></h3>
+<ol>
+  <li>Properties</li>
+</ol>
+
+<hr />
+
+<h2 id="basics-1">Basics</h2>
+
+<p>C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.</p>
+
+<p>C# is used to develop web apps, desktop apps, mobile apps, games and much more.</p>
+
+<h3 id="used-for">Used for:</h3>
+
+<ul>
+  <li>
+    <p>Mobile applications</p>
+  </li>
+  <li>
+    <p>Desktop applications</p>
+  </li>
+  <li>
+    <p>Web applications</p>
+  </li>
+  <li>
+    <p>Web services</p>
+  </li>
+  <li>
+    <p>Web sites</p>
+  </li>
+  <li>
+    <p>Games</p>
+  </li>
+  <li>
+    <p>VR</p>
+  </li>
+  <li>
+    <p>Database applications</p>
+  </li>
+  <li>
+    <p>And much, much more!</p>
+  </li>
+</ul>
+
+<h3 id="why-use-c">Why Use C#?</h3>
+
+<ul>
+  <li>
+    <p>It is one of the most popular programming language in the world</p>
+  </li>
+  <li>
+    <p>It is easy to learn and simple to use</p>
+  </li>
+  <li>
+    <p>It has a huge community support</p>
+  </li>
+  <li>
+    <p>C# is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs</p>
+  </li>
+  <li>
+    <p>As C# is close to C, C++ and Java, it makes it easy for programmers to switch to C# or vice versa</p>
+  </li>
+</ul>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">_2.ASP.NET_Core</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">class</code>: is a keyword which is used to define class.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Program</code>: is the class name. A class is a blueprint or template from which objects are created. It can have data members and methods. Here, it has only Main method.</p>
+
+<p><code class="language-plaintext highlighter-rouge">static</code>: is a keyword which means object is not required to access static members. So it saves memory.</p>
+
+<p><code class="language-plaintext highlighter-rouge">void</code>: is the return type of the method. It does’t return any value. In such case, return statement is not required.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Main</code>: is the method name. It is the entry point for any C# program. Whenever we run the C# program, Main() method is invoked first before any other method. It represents start up of the program.</p>
+
+<p><code class="language-plaintext highlighter-rouge">string[] args</code>: is used for command line arguments in C#. While running the C# program, we can pass values. These values are known as arguments which we can use in the program.</p>
+
+<p><code class="language-plaintext highlighter-rouge">System.Console.WriteLine("Hello World!")</code>: Here, System is the namespace. Console is the class defined in System namespace. The WriteLine() is the static method of Console class which is used to write the text on the console.</p>
+
+<h2 id="control-statement-1">Control Statement</h2>
+<h3 id="if-else">if-else</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="m">11</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"even"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"odd"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="switch">switch</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">numb</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="nf">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">());</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">numb</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="m">10</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"10 has been entered"</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="m">20</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"youve entered 20"</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">numb</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="for-loop">for Loop</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="while-loop">while Loop</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">k</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">k</span> <span class="p">&lt;=</span> <span class="m">3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="p">&lt;=</span> <span class="m">3</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">k</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">j</span><span class="p">);</span>
+        <span class="n">j</span><span class="p">++;</span>
+    <span class="p">}</span>
+    <span class="n">k</span><span class="p">++;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="do-while-loop">do-While Loop</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">l</span> <span class="p">=</span> <span class="m">7</span><span class="p">;</span>
+
+<span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">l</span><span class="p">);</span>
+    <span class="n">l</span><span class="p">++;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="p">&lt;=</span> <span class="m">9</span><span class="p">);</span>
+</code></pre></div></div>
+<h3 id="break">break</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;=</span> <span class="m">3</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;=</span> <span class="m">3</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="p">==</span> <span class="m">2</span> <span class="p">&amp;&amp;</span> <span class="n">j</span> <span class="p">==</span> <span class="m">2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">i</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">j</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="continue">continue</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;=</span> <span class="m">3</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;=</span> <span class="m">3</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="p">==</span> <span class="m">2</span> <span class="p">&amp;&amp;</span> <span class="n">j</span> <span class="p">==</span> <span class="m">2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">i</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">j</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="goto">goto</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ineligible</span><span class="p">:</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"You are not eligible to vote!"</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Enter your age:\n"</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">age</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="nf">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">());</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="p">&lt;</span> <span class="m">18</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">goto</span> <span class="n">ineligible</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"You are eligible to vote!"</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<h3 id="comments">comments</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">single</span> <span class="n">line</span> <span class="n">comment</span> <span class="p">-</span> <span class="c1">//</span>
+
+<span class="n">multiple</span> <span class="n">line</span> <span class="n">comment</span> <span class="p">-</span> <span class="cm">/**   **/</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="function-1">Function</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Function name</code>: It is a unique name that is used to make Function call.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Return type</code>: It is used to specify the data type of function return value.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Body</code>: It is a block that contains executable statements.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Access specifier</code>: It is used to specify function accessibility in the application.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Parameters</code>: It is a list of arguments that we can pass to the function during call.</p>
+
+<p>A function that does not return any value specifies <code class="language-plaintext highlighter-rouge">void</code>type as a return type.</p>
+
+<h3 id="function-2">Function</h3>
+<p><code class="language-plaintext highlighter-rouge">no parameter</code> and <code class="language-plaintext highlighter-rouge">no return type</code></p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">Show</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">Show</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">parameter</code> and <code class="language-plaintext highlighter-rouge">no return type</code></p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">Show</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello "</span> <span class="p">+</span> <span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span><span class="s">"Petrov"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">parameter</code> and <code class="language-plaintext highlighter-rouge">return type</code></p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="kt">string</span> <span class="nf">Show</span><span class="p">(</span><span class="kt">string</span> <span class="n">Message</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"hi "</span> <span class="p">+</span> <span class="n">Message</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">Message</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="kt">string</span> <span class="n">Message</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span><span class="s">"world"</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Message from "</span> <span class="p">+</span> <span class="n">Message</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="call-by-value">Call By Value</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">Multiply</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">val</span> <span class="p">**=</span> <span class="m">2</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">Multiply</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>output
+5
+10
+5
+</code></pre></div></div>
+
+<h3 id="call-by-reference">Call By Reference</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">Multiply</span><span class="p">(</span><span class="k">ref</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">val</span> <span class="p">**=</span> <span class="m">2</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">ref</span> <span class="kt">int</span> <span class="n">val</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">Multiply</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>output
+5
+10
+10
+</code></pre></div></div>
+
+<h3 id="out-parameter">Out Parameter</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">Show</span><span class="p">(</span><span class="k">out</span> <span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">square</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+    <span class="n">a</span> <span class="p">=</span> <span class="n">square</span><span class="p">;</span>
+    <span class="n">a</span> <span class="p">**=</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val1</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+    <span class="n">Program</span> <span class="n">program</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val1</span><span class="p">);</span>
+    <span class="n">program</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span><span class="k">out</span> <span class="n">val1</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>output
+5
+25
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="arrays-1">Arrays</h2>
+
+<h3 id="arrays-2">Arrays</h3>
+<p><code class="language-plaintext highlighter-rouge">array declaration</code> and <code class="language-plaintext highlighter-rouge">call</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">method one</code></p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="p">[]</span> <span class="n">arr</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">3</span><span class="p">];</span>
+<span class="n">arr</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+<span class="n">arr</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">method two</code></p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="p">[]</span> <span class="n">arr2</span> <span class="p">=</span> <span class="p">{</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span> <span class="p">};</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="k">in</span> <span class="n">arr2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="array-to-function">Array to Function</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Printed array:"</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">+</span> <span class="s">" "</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="p">[]</span> <span class="n">arr</span> <span class="p">=</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">};</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Printed array:"</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">m</span> <span class="p">=</span> <span class="n">arr</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="p">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="p">{</span>
+            <span class="n">m</span> <span class="p">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="p">[]</span> <span class="n">arr</span> <span class="p">=</span> <span class="p">{</span> <span class="m">5</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span> <span class="p">};</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="multidimensional-array">Multidimensional Array</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="p">[,]</span> <span class="n">arr</span> <span class="p">=</span> <span class="p">{</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span> <span class="p">},</span> <span class="p">{</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span> <span class="p">},</span> <span class="p">{</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span> <span class="p">}</span> <span class="p">};</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">3</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">3</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="p">+</span> <span class="s">" "</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="jagged-arrays">Jagged Arrays</h3>
+
+<p>The element size of ‘jagged array’ can be ‘different’</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="p">[][]</span> <span class="n">arr</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">2</span><span class="p">][];</span>
+
+<span class="n">arr</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">30</span> <span class="p">};</span>
+<span class="n">arr</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">50</span><span class="p">,</span> <span class="m">70</span> <span class="p">};</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Length</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="p">+</span> <span class="s">" "</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="params">Params</h3>
+
+<p><code class="language-plaintext highlighter-rouge">params</code> is a keyword which is used to specify a <code class="language-plaintext highlighter-rouge">parameter</code> that takes <code class="language-plaintext highlighter-rouge">variable</code> number of <code class="language-plaintext highlighter-rouge">arguments</code></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">void</span> <span class="nf">Show</span><span class="p">(</span><span class="k">params</span> <span class="kt">object</span><span class="p">[]</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">val</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">Show</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"two"</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="array-class">Array class</h3>
+
+<p><a href="https://www.javatpoint.com/c-sharp-array-class">Reference</a></p>
+
+<h3 id="command-line-args">Command Line Args</h3>
+
+<p><a href="https://www.javatpoint.com/c-sharp-array-class">Reference</a></p>
+
+<hr />
+
+<h2 id="object-class-1">Object Class</h2>
+
+<p><code class="language-plaintext highlighter-rouge">class</code> is a group of similar objects. It is a template from which <strong>objects</strong> are created. It can have <code class="language-plaintext highlighter-rouge">fields</code>, <code class="language-plaintext highlighter-rouge">methods</code>, <code class="language-plaintext highlighter-rouge">constructors</code> etc.</p>
+
+<h3 id="object-and-class">Object and Class</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// data members</span>
+<span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// new object</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+
+    <span class="c1">//assigning</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="m">25094</span><span class="p">;</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">"Petrov"</span><span class="p">;</span>
+
+    <span class="c1">//calling</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Initialize and Display data through method</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">String</span> <span class="n">s</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">id</span> <span class="p">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">name</span> <span class="p">=</span> <span class="n">s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">display</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">id</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="m">25094</span><span class="p">,</span> <span class="s">"Petrov"</span><span class="p">);</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="constructor">Constructor</h3>
+
+<p><code class="language-plaintext highlighter-rouge">constructor</code> is a special method which is invoked automatically at the time of <code class="language-plaintext highlighter-rouge">object creation</code>. It is used to initialize the data members of new object generally. The constructor in C# has the <code class="language-plaintext highlighter-rouge">same name</code> as class or struct.</p>
+
+<p>basic example</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">public</span> <span class="nf">Program</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"constructor"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Parameterized Constructor</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+<span class="k">public</span> <span class="nf">Program</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">String</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">id</span> <span class="p">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">name</span> <span class="p">=</span> <span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">display</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">id</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">(</span><span class="m">25094</span><span class="p">,</span> <span class="s">"Pterov"</span><span class="p">);</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="destructor">Destructor</h3>
+
+<p><code class="language-plaintext highlighter-rouge">destructor</code> works opposite to constructor, It <code class="language-plaintext highlighter-rouge">destructs</code> the <code class="language-plaintext highlighter-rouge">objects of classes</code>. It can be defined <code class="language-plaintext highlighter-rouge">only once</code> in a class. Like <strong>constructors</strong>, it is <code class="language-plaintext highlighter-rouge">invoked automatically</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nf">Program</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"constructor"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">~</span><span class="nf">Program</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"destroyed"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="this-static">this static</h3>
+
+<p><code class="language-plaintext highlighter-rouge">this</code> is a keyword that refers to the <code class="language-plaintext highlighter-rouge">current instance</code> of the class. There can be <code class="language-plaintext highlighter-rouge">3 main usage</code> of this keyword in C#.</p>
+
+<ol>
+  <li>It can be used to <code class="language-plaintext highlighter-rouge">refer current class</code> instance variable. It is used if field names (instance variables) and parameter names are same, that is why both can be distinguish easily.</li>
+  <li>It can be used to <code class="language-plaintext highlighter-rouge">pass</code> current <code class="language-plaintext highlighter-rouge">object</code> as a <code class="language-plaintext highlighter-rouge">parameter</code> to another method.</li>
+  <li>It can be used to <code class="language-plaintext highlighter-rouge">declare indexers</code>.</li>
+</ol>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="nf">Program</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">display</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">id</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Program</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">(</span><span class="m">25094</span><span class="p">,</span> <span class="s">"Petrov"</span><span class="p">);</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="static">static</h3>
+
+<p><code class="language-plaintext highlighter-rouge">static</code> is a keyword or modifier that belongs to the <code class="language-plaintext highlighter-rouge">type</code> <code class="language-plaintext highlighter-rouge">not instance</code>. So <code class="language-plaintext highlighter-rouge">instance</code> is <code class="language-plaintext highlighter-rouge">not</code> required to access the <code class="language-plaintext highlighter-rouge">static members</code>. In C#, static can be field, method, constructor, class, properties, operator and event.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Account</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">accno</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">count</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nf">Account</span><span class="p">(</span><span class="kt">int</span> <span class="n">accno</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">accno</span> <span class="p">=</span> <span class="n">accno</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">count</span><span class="p">++;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">display</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">accno</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">TestAccount</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Account</span> <span class="n">a1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Account</span><span class="p">(</span><span class="m">101</span><span class="p">,</span> <span class="s">"A"</span><span class="p">);</span>
+        <span class="n">Account</span> <span class="n">a2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Account</span><span class="p">(</span><span class="m">102</span><span class="p">,</span> <span class="s">"B"</span><span class="p">);</span>
+        <span class="n">Account</span> <span class="n">a3</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Account</span><span class="p">(</span><span class="m">103</span><span class="p">,</span> <span class="s">"C"</span><span class="p">);</span>
+        <span class="n">a1</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>
+        <span class="n">a2</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>
+        <span class="n">a3</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Total Objects are: "</span> <span class="p">+</span> <span class="n">Account</span><span class="p">.</span><span class="n">count</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="static-class">static class</h3>
+
+<p><code class="language-plaintext highlighter-rouge">static class</code> is like the <code class="language-plaintext highlighter-rouge">normal class</code> but it cannot be <code class="language-plaintext highlighter-rouge">instantiated</code>. It can have only <strong>static members</strong>. The <strong>advantage</strong> of static class is that it provides you guarantee that <code class="language-plaintext highlighter-rouge">instance</code> of static class <strong>cannot be created</strong>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">Account</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">TestAccount</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">Account</span><span class="p">.</span><span class="n">num</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="static-constructor">static constructor</h3>
+
+<p><code class="language-plaintext highlighter-rouge">static constructor</code> is used to <code class="language-plaintext highlighter-rouge">initialize</code> <code class="language-plaintext highlighter-rouge">static fields</code></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Account</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>   
+    <span class="k">public</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>  
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">float</span> <span class="n">rateOfInterest</span><span class="p">;</span>  
+    <span class="k">public</span> <span class="nf">Account</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">)</span>  
+    <span class="p">{</span>  
+        <span class="k">this</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span>  
+        <span class="k">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>  
+    <span class="p">}</span>  
+    <span class="k">static</span> <span class="nf">Account</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="n">rateOfInterest</span> <span class="p">=</span> <span class="m">9.5f</span><span class="p">;</span>  
+    <span class="p">}</span>  
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">display</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">id</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">name</span><span class="p">+</span><span class="s">" "</span><span class="p">+</span><span class="n">rateOfInterest</span><span class="p">);</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+<span class="k">class</span> <span class="nc">TestEmployee</span><span class="p">{</span>  
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>  
+    <span class="p">{</span>  
+        <span class="n">Account</span> <span class="n">a1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Account</span><span class="p">(</span><span class="m">101</span><span class="p">,</span> <span class="s">"Sonoo"</span><span class="p">);</span>  
+        <span class="n">Account</span> <span class="n">a2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Account</span><span class="p">(</span><span class="m">102</span><span class="p">,</span> <span class="s">"Mahesh"</span><span class="p">);</span>  
+        <span class="n">a1</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>  
+        <span class="n">a2</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>  
+
+    <span class="p">}</span>  
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<h3 id="structs">Structs</h3>
+
+<p><code class="language-plaintext highlighter-rouge">classes</code> and <code class="language-plaintext highlighter-rouge">structs</code> are <strong>blueprints</strong> that are used to <code class="language-plaintext highlighter-rouge">create instance</code> of a class</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">struct</span> <span class="nc">Rectangle</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>  
+<span class="p">}</span>  
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TestStructs</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="n">Rectangle</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="p">();</span>  
+        <span class="n">r</span><span class="p">.</span><span class="n">width</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>  
+        <span class="n">r</span><span class="p">.</span><span class="n">height</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Area of Rectangle is: "</span> <span class="p">+</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">width</span> <span class="p">**</span> <span class="n">r</span><span class="p">.</span><span class="n">height</span><span class="p">));</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<h3 id="enum">Enum</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Enum</code> in C# is also known as <code class="language-plaintext highlighter-rouge">enumeration</code>. It is used to store a set of named constants such as <code class="language-plaintext highlighter-rouge">season</code>, <code class="language-plaintext highlighter-rouge">days</code>, <code class="language-plaintext highlighter-rouge">month</code>, <code class="language-plaintext highlighter-rouge">size</code> etc</p>
+
+<p>Points to remember</p>
+<ol>
+  <li>enum has fixed set of constants</li>
+  <li>enum improves type safety</li>
+  <li>enum can be traversed</li>
+</ol>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">EnumExample</span>  
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">enum</span> <span class="n">Season</span> <span class="p">{</span> <span class="n">WINTER</span><span class="p">,</span> <span class="n">SPRING</span><span class="p">,</span> <span class="n">SUMMER</span><span class="p">,</span> <span class="n">FALL</span> <span class="p">}</span>    
+  
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>  
+    <span class="p">{</span>  
+        <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">Season</span><span class="p">.</span><span class="n">WINTER</span><span class="p">;</span>  
+        <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">Season</span><span class="p">.</span><span class="n">SUMMER</span><span class="p">;</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"WINTER = {0}"</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"SUMMER = {0}"</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="properties-1">Properties</h2>
+
+<p>C# <code class="language-plaintext highlighter-rouge">Properites</code> doesn’t have storage location. C# Properites are <code class="language-plaintext highlighter-rouge">extension</code> of <code class="language-plaintext highlighter-rouge">fields</code> and <code class="language-plaintext highlighter-rouge">accessed like fields</code>.</p>
+
+<p>The Properties have accessors that are used to <code class="language-plaintext highlighter-rouge">set</code>, <code class="language-plaintext highlighter-rouge">get</code> or compute their values.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Employee</span>
+<span class="p">{</span>
+    <span class="c1">// basic declaration</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">counter</span><span class="p">;</span>
+
+    <span class="c1">// constructor calls the function+</span>
+    <span class="k">public</span> <span class="nf">Employee</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">counter</span><span class="p">++;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">counter2</span>
+    <span class="p">{</span>
+        <span class="k">get</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">counter</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span>
+    <span class="p">{</span>
+        <span class="k">get</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">set</span>
+        <span class="p">{</span>
+            <span class="n">name</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestEmployee</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Employee</span> <span class="n">e1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Employee</span><span class="p">();</span>
+        <span class="n">Employee</span> <span class="n">e2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Employee</span><span class="p">();</span>
+        <span class="n">Employee</span> <span class="n">e3</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Employee</span><span class="p">();</span>
+        <span class="n">e1</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"Petrov"</span><span class="p">;</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Employee Name: "</span> <span class="p">+</span> <span class="n">e1</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Employee Totals: "</span> <span class="p">+</span> <span class="n">Employee</span><span class="p">.</span><span class="n">counter</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET
