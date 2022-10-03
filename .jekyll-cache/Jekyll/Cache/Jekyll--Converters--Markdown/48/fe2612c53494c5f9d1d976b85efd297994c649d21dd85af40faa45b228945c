@@ -1,0 +1,618 @@
+I"±à<p>Strings are used for storing text. A string variable contains a collection of characters surrounded by double quotes.Exceptions provide a way to transfer control from one part of a program to another. The FileStream is a class used for reading and writing files in C#. Collections standardize the way of which the objects are handled by your program.</p>
+
+<h1 id="content"><a href="#advanced">Content</a></h1>
+
+<h3 id="strings"><a href="#strings-1">Strings</a></h3>
+<ol>
+  <li>Strings</li>
+</ol>
+
+<h3 id="exception-handling"><a href="#exception-handling-1">Exception Handling</a></h3>
+<ol>
+  <li>Exception Handling</li>
+  <li>try/catch</li>
+  <li>finally</li>
+  <li>Custom Exception</li>
+  <li>checked unchecked</li>
+  <li>SystemException</li>
+</ol>
+
+<h3 id="file-io"><a href="#file-io-1">File IO</a></h3>
+<ol>
+  <li>FileStream</li>
+  <li>StreamWriter</li>
+  <li>StreamReader</li>
+  <li>TextWriter</li>
+  <li>TextReader</li>
+  <li>BinaryWriter</li>
+  <li>BinaryReader</li>
+  <li>StringWriter</li>
+  <li>StringReader</li>
+  <li>FileInfo</li>
+  <li>DirectoryInfo</li>
+  <li>Serialization</li>
+  <li>Deserialization</li>
+  <li>System.IO</li>
+</ol>
+
+<h3 id="collections"><a href="#collections-1">Collections</a></h3>
+<ol>
+  <li>Collections</li>
+  <li>List</li>
+  <li>HashSet</li>
+  <li>SortedSet</li>
+  <li>Stack</li>
+  <li>Queue</li>
+  <li>LinkedList</li>
+  <li>Dictionary</li>
+  <li>SortedDictionary</li>
+  <li>SortedList</li>
+</ol>
+
+<h3 id="generics"><a href="#generics-1">Generics</a></h3>
+<ol>
+  <li>Generics</li>
+  <li>Delegates</li>
+  <li>Reflection</li>
+  <li>Anonymous Function</li>
+  <li>Multithreading</li>
+  <li>Thread Life Cycle</li>
+  <li>Thread class</li>
+  <li>Main Thread</li>
+  <li>Thread Example</li>
+  <li>Thread Sleep</li>
+  <li>Thread Abort</li>
+  <li>Thread Join</li>
+  <li>Thread Name</li>
+  <li>ThreadPriority</li>
+</ol>
+
+<hr />
+
+<h1 id="advanced">Advanced</h1>
+
+<h2 id="strings-1">Strings</h2>
+
+<p>In C#, <code class="language-plaintext highlighter-rouge">string</code> is an <code class="language-plaintext highlighter-rouge">object</code> of <code class="language-plaintext highlighter-rouge">System</code>.
+String class that represent sequence of characters. We can perform many operations on strings such as <code class="language-plaintext highlighter-rouge">concatenation</code>, <code class="language-plaintext highlighter-rouge">comparision</code>, <code class="language-plaintext highlighter-rouge">getting substring</code>, <code class="language-plaintext highlighter-rouge">search</code>, <code class="language-plaintext highlighter-rouge">trim</code>, <code class="language-plaintext highlighter-rouge">replacement</code> etc.</p>
+
+<p><strong>string vs String</strong></p>
+
+<p>In C#, <code class="language-plaintext highlighter-rouge">string</code> is keyword which is an alias for <code class="language-plaintext highlighter-rouge">System.String class</code>. 
+That is why string and String are equivalent. We are free to use any naming convention.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-strings">Reference</a></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//String Clone () method</span>
+<span class="kt">string</span> <span class="n">s1</span> <span class="p">=</span> <span class="s">"Hello "</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">s2</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">s1</span><span class="p">.</span><span class="nf">Clone</span><span class="p">();</span>
+
+<span class="c1">//String Compare () method</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Compare</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">));</span>
+
+<span class="c1">//String Concat () method</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Concat</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">));</span>
+
+<span class="c1">//String Contains () method</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">s2</span><span class="p">));</span>
+
+<span class="c1">//String Format () method</span>
+<span class="kt">string</span> <span class="n">s3</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0:D}"</span><span class="p">,</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">s3</span><span class="p">);</span>
+
+<span class="c1">//String IndexOf () method</span>
+<span class="kt">int</span> <span class="n">index</span> <span class="p">=</span> <span class="n">s1</span><span class="p">.</span><span class="nf">IndexOf</span><span class="p">(</span><span class="sc">'e'</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+
+<span class="c1">//String Insert () method</span>
+<span class="kt">string</span> <span class="n">s4</span> <span class="p">=</span> <span class="n">s1</span><span class="p">.</span><span class="nf">Insert</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="s">"-"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">s4</span><span class="p">);</span>
+
+<span class="c1">//String Join () method</span>
+<span class="kt">string</span><span class="p">[]</span> <span class="n">s5</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"Hello"</span><span class="p">,</span> <span class="s">"C#"</span><span class="p">,</span> <span class="s">"by"</span><span class="p">,</span> <span class="s">"javatpoint"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">s6</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span> <span class="n">s5</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">s6</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="nf">Clone</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Compare</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">CompareOrdinal</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">CompareTo</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Concat</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Contains</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Copy</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">CopyTo</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">EndsWith</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Equals</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Format</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">GetEnumerator</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">GetHashCode</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">GetType</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">GetTypeCode</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">IndexOf</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Insert</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Intern</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">IsInterned</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">IsNormalized</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Normalize</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">IsNullOrEmpty</span><span class="p">()</span>
+<span class="nf">IsNullOrWhiteSpace</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Join</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">LastIndexOf</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">LastIndexOfAny</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">PadLeft</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">PadRight</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Remove</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Replace</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Split</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">StartsWith</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">SubString</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">ToCharArray</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">ToLower</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">ToLowerInvariant</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">ToString</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">ToUpper</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">ToUpperInvariant</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">Trim</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">TrimEnd</span><span class="p">()</span>
+<span class="n">String</span> <span class="nf">TrimStart</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="exception-handling-1">Exception Handling</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Exception Handling</code> in C# is a process to <strong>handle runtime errors</strong>. We perform exception handling so that normal flow of the application can be maintained even after runtime errors.</p>
+
+<p>In C#, <code class="language-plaintext highlighter-rouge">exception</code> is an event or object which is <em>thrown at runtime</em>. All exceptions the derived from System.Exception class. It is a runtime error which can be handled. If we donâ€™t handle the exception, it prints exception message and terminates the program.</p>
+
+<p>In C#, we use 4 keywords to perform exception handling:</p>
+
+<ol>
+  <li>try</li>
+  <li>catch</li>
+  <li>finally</li>
+  <li>throw</li>
+</ol>
+
+<h3 id="trycatch">try/catch</h3>
+
+<p>In C# programming, <code class="language-plaintext highlighter-rouge">exception handling</code> is performed by try/catch statement. 
+The <code class="language-plaintext highlighter-rouge">try</code> block in C# is used to place the code that may <code class="language-plaintext highlighter-rouge">throw exception</code>. The <code class="language-plaintext highlighter-rouge">catch</code> block is used to <code class="language-plaintext highlighter-rouge">handle the exception</code>. The catch block must be preceded by try block.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="p">=</span> <span class="n">a</span> <span class="p">/</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">e</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Done"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="finally">finally</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">finally block</code> is used to execute important code which is to be executed whether exception is handled or not. It must be preceded by <code class="language-plaintext highlighter-rouge">catch</code> or <code class="language-plaintext highlighter-rouge">try block</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="p">=</span> <span class="n">a</span> <span class="p">/</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">e</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="k">finally</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Done"</span><span class="p">);</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="custom-exception">Custom Exception</h3>
+
+<p>C# allows us to create <code class="language-plaintext highlighter-rouge">user-defined</code> or <code class="language-plaintext highlighter-rouge">custom exception</code>. It is used to make the meaningful exception.</p>
+
+<p>{ Reference} (https://www.javatpoint.com/c-sharp-user-defined-exceptions)</p>
+
+<h3 id="checked-unchecked">checked unchecked</h3>
+
+<p>C# provides <code class="language-plaintext highlighter-rouge">checked</code> and <code class="language-plaintext highlighter-rouge">unchecked</code> keyword to handle integral type exceptions. Checked and unchecked keywords specify checked <code class="language-plaintext highlighter-rouge">context</code> and <code class="language-plaintext highlighter-rouge">unchecked context</code> respectively. In checked context, arithmetic overflow raises an exception whereas, in an unchecked context, arithmetic overflow is ignored and result is <code class="language-plaintext highlighter-rouge">truncated</code>.</p>
+
+<p><strong>C# Checked</strong></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">checked keyword</code> is used to explicitly check overflow and conversion of integral type values at compile time.</p>
+
+<p>{ Reference} (https://www.javatpoint.com/c-sharp-checked-and-unchecked)</p>
+
+<h3 id="systemexception">SystemException</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">SystemException</code> is a predefined exception class in C#. It is used to handle system related exceptions. It works as base class for system exception namespace.</p>
+
+<p>It has various child classes like: <code class="language-plaintext highlighter-rouge">ValidationException</code>, <code class="language-plaintext highlighter-rouge">ArgumentException</code>, <code class="language-plaintext highlighter-rouge">ArithmeticException</code>, <code class="language-plaintext highlighter-rouge">DataException</code>, <code class="language-plaintext highlighter-rouge">StackOverflowException</code> etc.</p>
+
+<p>{ Reference} (https://www.javatpoint.com/c-sharp-systemexception)</p>
+
+<h2 id="file-io-1">File IO</h2>
+
+<h3 id="filestream">FileStream</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">FileStream</code> class provides a stream for file operation. It can be used to perform synchronous and asynchronous read and write operations. By the help of FileStream class, we can easily <code class="language-plaintext highlighter-rouge">read</code> and <code class="language-plaintext highlighter-rouge">write</code> <code class="language-plaintext highlighter-rouge">data into file</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//creating file stream </span>
+<span class="n">FileStream</span> <span class="n">f</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileStream</span><span class="p">(</span><span class="s">"e:\\b.txt"</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">OpenOrCreate</span><span class="p">);</span>
+
+<span class="c1">//writing byte into stream </span>
+<span class="n">f</span><span class="p">.</span><span class="nf">WriteByte</span><span class="p">(</span><span class="m">65</span><span class="p">);</span> 
+
+<span class="c1">//closing stream  </span>
+<span class="n">f</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="streamwriter">StreamWriter</h3>
+
+<p><code class="language-plaintext highlighter-rouge">StreamWriter</code> class is used to <code class="language-plaintext highlighter-rouge">write</code> characters to a stream in <code class="language-plaintext highlighter-rouge">specific encoding</code>. It inherits TextWriter class. It provides overloaded <code class="language-plaintext highlighter-rouge">write()</code> and <code class="language-plaintext highlighter-rouge">writeln()</code> methods to write data into file.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//creating file stream </span>
+<span class="n">FileStream</span> <span class="n">f</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileStream</span><span class="p">(</span><span class="s">"d:\\v.txt"</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">OpenOrCreate</span><span class="p">);</span>
+
+<span class="n">StreamWriter</span> <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamWriter</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+
+<span class="n">s</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"hello c#"</span><span class="p">);</span>
+<span class="n">s</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"File created successfully..."</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="streamreader">StreamReader</h3>
+
+<p><code class="language-plaintext highlighter-rouge">StreamReader</code> class is used to read string from the stream. It inherits TextReader class. It provides <code class="language-plaintext highlighter-rouge">Read()</code> and <code class="language-plaintext highlighter-rouge">ReadLine()</code> methods to <strong>read data</strong> from the <strong>stream</strong>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//creating file stream </span>
+<span class="n">FileStream</span> <span class="n">f</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileStream</span><span class="p">(</span><span class="s">"d:\\v.txt"</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">OpenOrCreate</span><span class="p">);</span>
+
+<span class="n">StreamReader</span> <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+
+<span class="n">String</span> <span class="n">line</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+
+<span class="n">s</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="textwriter">TextWriter</h3>
+
+<p><code class="language-plaintext highlighter-rouge">TextWriter</code> class is an <code class="language-plaintext highlighter-rouge">abstract class</code>. It is used to write text or sequential series of characters into file. It is found in <code class="language-plaintext highlighter-rouge">System.IO</code> namespace.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="p">(</span><span class="n">TextWriter</span> <span class="n">writer</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="nf">CreateText</span><span class="p">(</span><span class="s">"d:\\v.txt"</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">writer</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello C#"</span><span class="p">);</span>
+    <span class="n">writer</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"C# File Handling"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Data written successfully..."</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="textreader">TextReader</h3>
+
+<p><code class="language-plaintext highlighter-rouge">TextReader</code> class is found in System.IO namespace. It represents a <code class="language-plaintext highlighter-rouge">reader</code> that can be used to read text or sequential series of characters.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="p">(</span><span class="n">TextReader</span> <span class="n">tr</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="nf">OpenText</span><span class="p">(</span><span class="s">"e:\\f.txt"</span><span class="p">))</span>  
+<span class="p">{</span>  
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">tr</span><span class="p">.</span><span class="nf">ReadToEnd</span><span class="p">());</span>  
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<h3 id="binarywriter">BinaryWriter</h3>
+
+<p><code class="language-plaintext highlighter-rouge">BinaryWriter</code> class is used to write <code class="language-plaintext highlighter-rouge">binary information</code> into stream. It is found in System.IO namespace. It also supports writing string in <code class="language-plaintext highlighter-rouge">specific encoding</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">fileName</span> <span class="p">=</span> <span class="s">"e:\\binaryfile.dat"</span><span class="p">;</span>  
+<span class="k">using</span> <span class="p">(</span><span class="n">BinaryWriter</span> <span class="n">writer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BinaryWriter</span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Create</span><span class="p">)))</span>  
+<span class="p">{</span>  
+    <span class="n">writer</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="m">2.5</span><span class="p">);</span>  
+    <span class="n">writer</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"this is string data"</span><span class="p">);</span>  
+    <span class="n">writer</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>  
+<span class="p">}</span>  
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Data written successfully..."</span><span class="p">);</span>    
+</code></pre></div></div>
+
+<h3 id="binaryreader">BinaryReader</h3>
+
+<p><code class="language-plaintext highlighter-rouge">BinaryReader</code> class is used to <code class="language-plaintext highlighter-rouge">read binary information</code> from stream. It is found in System.IO namespace. It also supports reading string in specific encoding.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="nf">WriteBinaryFile</span><span class="p">();</span>  
+    <span class="nf">ReadBinaryFile</span><span class="p">();</span>  
+    <span class="n">Console</span><span class="p">.</span><span class="nf">ReadKey</span><span class="p">();</span>  
+<span class="p">}</span>  
+<span class="k">static</span> <span class="k">void</span> <span class="nf">WriteBinaryFile</span><span class="p">()</span>  
+<span class="p">{</span>  
+    <span class="k">using</span> <span class="p">(</span><span class="n">BinaryWriter</span> <span class="n">writer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BinaryWriter</span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="s">"e:\\binaryfile.dat"</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Create</span><span class="p">)))</span>  
+    <span class="p">{</span>  
+            
+        <span class="n">writer</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="m">12.5</span><span class="p">);</span>  
+        <span class="n">writer</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"this is string data"</span><span class="p">);</span>  
+        <span class="n">writer</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>  
+<span class="k">static</span> <span class="k">void</span> <span class="nf">ReadBinaryFile</span><span class="p">()</span>  
+<span class="p">{</span>  
+    <span class="k">using</span> <span class="p">(</span><span class="n">BinaryReader</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BinaryReader</span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="s">"e:\\binaryfile.dat"</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">)))</span>  
+    <span class="p">{</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Double Value : "</span> <span class="p">+</span> <span class="n">reader</span><span class="p">.</span><span class="nf">ReadDouble</span><span class="p">());</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"String Value : "</span> <span class="p">+</span> <span class="n">reader</span><span class="p">.</span><span class="nf">ReadString</span><span class="p">());</span>  
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Boolean Value : "</span> <span class="p">+</span> <span class="n">reader</span><span class="p">.</span><span class="nf">ReadBoolean</span><span class="p">());</span>  
+    <span class="p">}</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="stringwriter">StringWriter</h3>
+
+<p>This <code class="language-plaintext highlighter-rouge">class</code> is used to write and deal with <code class="language-plaintext highlighter-rouge">string data</code> <code class="language-plaintext highlighter-rouge">rather than files</code>. It is <code class="language-plaintext highlighter-rouge">derived class of TextWriter class</code>. The string data written by <code class="language-plaintext highlighter-rouge">StringWriter</code> class is stored into <code class="language-plaintext highlighter-rouge">StringBuilder</code>.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-stringwriter">Reference</a></p>
+
+<h3 id="stringreader">StringReader</h3>
+
+<p><code class="language-plaintext highlighter-rouge">StringReader</code> class is used to read data written by the StringWriter class. It is <code class="language-plaintext highlighter-rouge">subclass of TextReader class</code>. It enables us to <code class="language-plaintext highlighter-rouge">read a string synchronously</code> or <code class="language-plaintext highlighter-rouge">asynchronously</code>. It provides constructors and methods to perform read operations.</p>
+
+<h3 id="fileinfo">FileInfo</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">FileInfo</code> class is used to <code class="language-plaintext highlighter-rouge">deal with file</code> and its <code class="language-plaintext highlighter-rouge">operations in C#</code>. It provides <code class="language-plaintext highlighter-rouge">properties</code> and <code class="language-plaintext highlighter-rouge">methods</code> that are used to <code class="language-plaintext highlighter-rouge">create</code>, <code class="language-plaintext highlighter-rouge">delete</code> and <code class="language-plaintext highlighter-rouge">read</code> file. It uses StreamWriter class to write data to the file. It is a part of System.IO namespace.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-fileinfo">Reference</a></p>
+
+<h3 id="directoryinfo">DirectoryInfo</h3>
+
+<p><code class="language-plaintext highlighter-rouge">DirectoryInfo</code> class is a part of System.IO namespace. It is used to create, delete and move directory. It <code class="language-plaintext highlighter-rouge">provides</code> methods to perform operations related to <code class="language-plaintext highlighter-rouge">directory</code> and <code class="language-plaintext highlighter-rouge">subdirectory</code>. It is a <code class="language-plaintext highlighter-rouge">sealed class</code> so, we cannot inherit it.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-directoryinfo">Reference</a></p>
+
+<h3 id="serialization">Serialization</h3>
+
+<p>In C#, <code class="language-plaintext highlighter-rouge">serialization</code> is the process of converting object into byte stream so that it can be saved to <code class="language-plaintext highlighter-rouge">memory</code>, <code class="language-plaintext highlighter-rouge">file</code> or <code class="language-plaintext highlighter-rouge">database</code>. The reverse process of serialization is called <code class="language-plaintext highlighter-rouge">deserialization</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">using</span> <span class="nn">System.Runtime.Serialization.Formatters.Binary</span><span class="p">;</span>
+<span class="p">[</span><span class="n">Serializable</span><span class="p">]</span>
+<span class="k">class</span> <span class="nc">Student</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">rollno</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nf">Student</span><span class="p">(</span><span class="kt">int</span> <span class="n">rollno</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">rollno</span> <span class="p">=</span> <span class="n">rollno</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">SerializeExample</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">FileStream</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileStream</span><span class="p">(</span><span class="s">"d:\\v.txt"</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">OpenOrCreate</span><span class="p">);</span>
+        <span class="n">BinaryFormatter</span> <span class="n">formatter</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BinaryFormatter</span><span class="p">();</span>
+
+        <span class="n">Student</span> <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Student</span><span class="p">(</span><span class="m">101</span><span class="p">,</span> <span class="s">"sonoo"</span><span class="p">);</span>
+        <span class="n">formatter</span><span class="p">.</span><span class="nf">Serialize</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+
+        <span class="n">stream</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="deserialization">Deserialization</h3>
+
+<p>In C# programming, <code class="language-plaintext highlighter-rouge">deserialization</code> is the reverse process of serialization. It means you can read the object from byte stream. Here, we are going to use <code class="language-plaintext highlighter-rouge">BinaryFormatter</code>.Deserialize(stream) method to <code class="language-plaintext highlighter-rouge">deserialize</code> the stream.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Runtime.Serialization.Formatters.Binary</span><span class="p">;</span>
+<span class="p">[</span><span class="n">Serializable</span><span class="p">]</span>
+<span class="k">class</span> <span class="nc">Student</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">rollno</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nf">Student</span><span class="p">(</span><span class="kt">int</span> <span class="n">rollno</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">rollno</span> <span class="p">=</span> <span class="n">rollno</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">DeserializeExample</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">FileStream</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileStream</span><span class="p">(</span><span class="s">"d:\\v.txt"</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">OpenOrCreate</span><span class="p">);</span>
+        <span class="n">BinaryFormatter</span> <span class="n">formatter</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BinaryFormatter</span><span class="p">();</span>
+
+        <span class="n">Student</span> <span class="n">s</span> <span class="p">=</span> <span class="p">(</span><span class="n">Student</span><span class="p">)</span><span class="n">formatter</span><span class="p">.</span><span class="nf">Deserialize</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Rollno: "</span> <span class="p">+</span> <span class="n">s</span><span class="p">.</span><span class="n">rollno</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Name: "</span> <span class="p">+</span> <span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+
+        <span class="n">stream</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="systemio">System.IO</h3>
+
+<p>The System.IO namespace consists of IO related classes, structures, delegates and enumerations. These classes can be used to reads and write data to files or data streams. It also contains classes for file and directory support.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-system-io">Reference</a></p>
+
+<hr />
+
+<h2 id="collections-1">Collections</h2>
+<h3 id="collections-2">Collections</h3>
+
+<p>In C#, collection represents group of objects. By the help of collections, we can perform various operations on objects such as</p>
+
+<p>-store object
+ -update object
+ -delete object
+ -retrieve object
+ -search object</p>
+<ul>
+  <li>sort object</li>
+</ul>
+
+<p>In sort, all the data structure work can be performed by C# collections.</p>
+
+<p>We can store objects in array or collection. Collection has advantage over array. Array has size limit but objects stored in collection can grow or shrink dynamically.</p>
+
+<p>Types of Collections in C#
+There are 3 ways to work with collections. The three namespaces are given below:</p>
+
+<ol>
+  <li>System.Collections.Generic classes</li>
+  <li>System.Collections classes(Now deprecated)</li>
+  <li>System.Collections.Concurrent classes</li>
+</ol>
+
+<h3 id="list">List</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">List&lt;T&gt; class</code> is used to store and fetch elements. It can have duplicate elements. It is found in System.Collections.Generic namespace.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a list of strings  </span>
+<span class="kt">var</span> <span class="n">names</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<span class="n">names</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"ABC"</span><span class="p">);</span>
+<span class="n">names</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"DEF"</span><span class="p">);</span>
+<span class="n">names</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"GHI"</span><span class="p">);</span>
+
+<span class="c1">// Iterate list element using foreach loop  </span>
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">name</span> <span class="k">in</span> <span class="n">names</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="hashset">HashSet</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">HashSet class</code> can be used to store, remove or view elements. It does not store duplicate elements. It is suggested to use HashSet class if you have to store only <code class="language-plaintext highlighter-rouge">unique elements</code>. It is found in System.Collections.Generic namespace.</p>
+
+<h3 id="sortedset">SortedSet</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">SortedSet class</code> can be used to <code class="language-plaintext highlighter-rouge">store</code>, <code class="language-plaintext highlighter-rouge">remove</code> or <code class="language-plaintext highlighter-rouge">view</code> elements. It maintains ascending order and <strong>does not</strong> store duplicate elements. It is suggested to use <code class="language-plaintext highlighter-rouge">SortedSet</code> class if you have to store <code class="language-plaintext highlighter-rouge">unique elements</code> and <code class="language-plaintext highlighter-rouge">maintain ascending order</code>. It is found in System.Collections.Generic namespace.</p>
+
+<h3 id="stack">Stack</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">Stack&lt;T&gt; class</code> is used to <code class="language-plaintext highlighter-rouge">push</code> and <code class="language-plaintext highlighter-rouge">pop</code> elements. It uses the concept of <code class="language-plaintext highlighter-rouge">Stack</code> that arranges elements in LIFO (Last In First Out) order. It <strong>can</strong> have <code class="language-plaintext highlighter-rouge">duplicate elements</code>. It is found in System.Collections.Generic namespace.</p>
+
+<h3 id="queue">Queue</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">Queue&lt;T&gt; class</code> is used to Enqueue and Dequeue elements. It uses the concept of Queue that arranges elements in FIFO (First In First Out) order. It <strong>can</strong> have <code class="language-plaintext highlighter-rouge">duplicate elements</code>. It is found in System.Collections.Generic namespace.</p>
+
+<h3 id="linkedlist">LinkedList</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">LinkedList&lt;T&gt; class</code> uses the concept of linked list. It allows us to insert and delete elements fastly. It <strong>can</strong> have <code class="language-plaintext highlighter-rouge">duplicate elements</code>. It is found in System.Collections.Generic namespace.</p>
+
+<h3 id="dictionary">Dictionary</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">Dictionary&lt;TKey, TValue&gt; class</code> uses the concept of hashtable. It stores values on the basis of key. It contains unique keys only. By the help of key, we can easily search or remove elements. It is found in System.Collections.Generic namespace.</p>
+
+<h3 id="sorteddictionary">SortedDictionary</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">SortedDictionary&lt;TKey, TValue&gt; class</code> uses the concept of hashtable. It stores values on the basis of key. It contains unique keys and maintains ascending order on the basis of key. By the help of key, we can easily <code class="language-plaintext highlighter-rouge">search</code> or <code class="language-plaintext highlighter-rouge">remove</code> elements. It is found in System.Collections.Generic namespace.</p>
+
+<h3 id="sortedlist">SortedList</h3>
+
+<p>C# <code class="language-plaintext highlighter-rouge">SortedList&lt;TKey, TValue&gt;</code> is an <code class="language-plaintext highlighter-rouge">array</code> of key/value pairs. It stores values on the basis of key. The SortedList&lt;TKey, TValue&gt; class contains unique keys and maintains ascending order on the basis of key. By the help of key, we can easily <code class="language-plaintext highlighter-rouge">search</code> or <code class="language-plaintext highlighter-rouge">remove</code> elements. It is found in System.Collections.Generic namespace.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">names</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"1"</span><span class="p">,</span><span class="s">"AAA"</span><span class="p">);</span>    
+<span class="k">foreach</span> <span class="p">(</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;</span> <span class="n">kv</span> <span class="k">in</span> <span class="n">names</span><span class="p">)</span>  
+<span class="p">{</span>  
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">kv</span><span class="p">.</span><span class="n">Key</span><span class="p">+</span><span class="s">" "</span><span class="p">+</span><span class="n">kv</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>  
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="generics-1">Generics</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Generic</code> is a concept that allows us to define <code class="language-plaintext highlighter-rouge">classes</code> and <code class="language-plaintext highlighter-rouge">methods</code> with placeholder. C# compiler replaces these placeholders with specified type at <code class="language-plaintext highlighter-rouge">compile time</code>. The concept of generics is <strong>used</strong> to create <code class="language-plaintext highlighter-rouge">general purpose classes and methods</code>.</p>
+
+<p>o define <code class="language-plaintext highlighter-rouge">generic class</code>, we must use angle &lt;&gt; brackets. The angle brackets are used to declare a class or method as generic type. In the following example, we are creating generic class that can be used to deal with any type of data.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">GenericClass</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">GenericClass</span><span class="p">(</span><span class="n">T</span> <span class="n">msg</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">GenericClass</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">gen</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GenericClass</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="s">"This is generic class"</span><span class="p">);</span>
+        <span class="n">GenericClass</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">genI</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GenericClass</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(</span><span class="m">101</span><span class="p">);</span>
+        <span class="n">GenericClass</span><span class="p">&lt;</span><span class="kt">char</span><span class="p">&gt;</span> <span class="n">getCh</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GenericClass</span><span class="p">&lt;</span><span class="kt">char</span><span class="p">&gt;(</span><span class="sc">'I'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="delegates">Delegates</h3>
+
+<p>In C#, <code class="language-plaintext highlighter-rouge">delegate</code> is a reference to the method. It works like function pointer in C and C++. But it is <code class="language-plaintext highlighter-rouge">objected-oriented</code>, secured and type-safe than <code class="language-plaintext highlighter-rouge">function pointer</code>.</p>
+
+<p>For static method, delegate encapsulates method only. But for instance method, it <strong>encapsulates</strong> <code class="language-plaintext highlighter-rouge">method</code> and <code class="language-plaintext highlighter-rouge">instance</code> both.</p>
+
+<p>The best use of delegate is to use as event.</p>
+
+<p>Internally a delegate declaration defines a class which is the derived class of System.Delegate.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">delegate</span> <span class="kt">int</span> <span class="nf">Calculator</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span><span class="c1">//declaring delegate  </span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">DelegateExample</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">number</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="k">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">number</span> <span class="p">=</span> <span class="n">number</span> <span class="p">+</span> <span class="n">n</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">number</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="nf">mul</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">number</span> <span class="p">=</span> <span class="n">number</span> <span class="p">*</span> <span class="n">n</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">number</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="nf">getNumber</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">number</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Calculator</span> <span class="n">c1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Calculator</span><span class="p">(</span><span class="k">add</span><span class="p">);</span><span class="c1">//instantiating delegate  </span>
+        <span class="n">Calculator</span> <span class="n">c2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Calculator</span><span class="p">(</span><span class="n">mul</span><span class="p">);</span>
+        <span class="nf">c1</span><span class="p">(</span><span class="m">20</span><span class="p">);</span><span class="c1">//calling method using delegate  </span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"After c1 delegate, Number is: "</span> <span class="p">+</span> <span class="nf">getNumber</span><span class="p">());</span>
+        <span class="nf">c2</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"After c2 delegate, Number is: "</span> <span class="p">+</span> <span class="nf">getNumber</span><span class="p">());</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h3 id="reflection">Reflection</h3>
+
+<p><code class="language-plaintext highlighter-rouge">reflection</code> is a process to get metadata of a type at runtime.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-reflection">Reference</a></p>
+
+<h3 id="anonymous-function">Anonymous Function</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Anonymous function</code> is a type of function that does not has name. In other words, we can say that a function without name is known as anonymous function.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-anonymous-function">Reference</a></p>
+
+<h3 id="multithreading">Multithreading</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Multithreading</code> in C# is a process in which multiple threads work simultaneously. It is a process to <code class="language-plaintext highlighter-rouge">achieve multitasking</code>. It saves time because multiple tasks are being executed at a time. To create multithreaded application in C#, we need to use System.Threding namespace.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-multithreading">Reference</a></p>
+
+<h3 id="thread-life-cycle">Thread Life Cycle</h3>
+
+<p>In C#, each <code class="language-plaintext highlighter-rouge">thread</code> has a life cycle. The life cycle of a thread is started when instance of System.Threading.<code class="language-plaintext highlighter-rouge">Thread class</code> is created. When the task execution of the thread is completed, its life cycle is <code class="language-plaintext highlighter-rouge">ended</code>.</p>
+
+<p><a href="https://www.javatpoint.com/c-sharp-thread-life-cycle">Reference</a></p>
+
+:ET
