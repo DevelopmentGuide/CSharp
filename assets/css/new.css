@@ -10,10 +10,12 @@
 
 #progressBar {
     top: 0%;
-    background: linear-gradient(to right, rgb(255, 255, 183), green);
+    background: linear-gradient(to right, #75e24a, #3cd400);
 }
 
-
+a:hover {
+    border: none !important;
+}
 
 html {
     background-color: white;
@@ -70,11 +72,12 @@ body {
 .linK {
     color: var(--accentdark) !important;
     font-weight: 600;
+    border: none !important;
 }
 
 .linK:hover {
     color: var(--accent) !important;
-    font-weight: 600;
+    text-decoration: underline;
 }
 
 a {
@@ -104,6 +107,12 @@ code {
     border-radius: 0px 0px 20px 20px;
     background-color: var(--this_accent);
     color: var(--black);
+}
+
+.item h3 {
+    font-size: 30px !important;
+    font-weight: 800 !important;
+    margin-top: 0px !important;
 }
 
 .item:hover {
